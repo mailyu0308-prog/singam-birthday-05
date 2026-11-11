@@ -415,7 +415,7 @@ const memoryStories = {
 
         ref={audioRef}
 
-        src="/En_Manadhin_Singame.mp3"
+        src={`${import.meta.env.BASE_URL}En_Manadhin_Singame.mp3`}
 
         loop
 
