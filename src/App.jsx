@@ -108,12 +108,32 @@ const monthFolders = {
 
   // Videos are kept in one separate collection, never inside month-wise Pictures.
   // Their original month folders and story captions are preserved.
-  const allVideos = [
-    { month: "April", file: "parrtoshopaftercoffeekings.mp4", src: `/pic/${monthFolders.April}/parrtoshopaftercoffeekings.mp4`, title: "Parotta shop after Coffee Kings" },
-    { month: "June", file: "returnsrikumaranch-mdu.mp4", src: `/pic/${monthFolders.June}/returnsrikumaranch-mdu.mp4`, title: "Return journey from Madurai to Chennai" },
-    { month: "July", file: "travel.mp4", src: `/pic/${monthFolders.July}/travel.mp4`, title: "Our little trip" },
-    { month: "September", file: "afterloggapmeet.mp4", src: `/pic/${monthFolders.September}/afterloggapmeet.mp4`, title: "After the long gap" },
-  ];
+ const allVideos = [
+  {
+    month: "April",
+    file: "parrtoshopaftercoffeekings.mp4",
+    src: `${import.meta.env.BASE_URL}pic/${monthFolders.April}/parrtoshopaftercoffeekings.mp4`,
+    title: "Parotta shop after Coffee Kings"
+  },
+  {
+    month: "June",
+    file: "returnsrikumaranch-mdu.mp4",
+    src: `${import.meta.env.BASE_URL}pic/${monthFolders.June}/returnsrikumaranch-mdu.mp4`,
+    title: "Return journey from Madurai to Chennai"
+  },
+  {
+    month: "July",
+    file: "travel.mp4",
+    src: `${import.meta.env.BASE_URL}pic/${monthFolders.July}/travel.mp4`,
+    title: "Our little trip"
+  },
+  {
+    month: "September",
+    file: "afterloggapmeet.mp4",
+    src: `${import.meta.env.BASE_URL}pic/${monthFolders.September}/afterloggapmeet.mp4`,
+    title: "After the long gap"
+  },
+];
 
   // Music controls
 
@@ -695,7 +715,7 @@ const memoryStories = {
 
   <img
 
-    src="/pic/coverpic/yourpic.jpeg"
+    src={`${import.meta.env.BASE_URL}pic/coverpic/yourpic.jpeg`}
 
     alt="Your Special Day"
 
@@ -755,7 +775,7 @@ const memoryStories = {
 
   <img className="moonimg1"
 
-    src="/pic/coverpic/moon.jpeg"
+    src={`${import.meta.env.BASE_URL}pic/coverpic/moon.jpeg`}
 
     alt="Our Chinna Ulagam"
 
@@ -1258,7 +1278,7 @@ const memoryStories = {
         {memoryFiles[selectedMonth].length > 0 ? (() => {
           const files = memoryFiles[selectedMonth];
           const file = files[selectedPhotoIndex];
-          const filePath = `/pic/${monthFolders[selectedMonth]}/${file}`;
+          const filePath = `${import.meta.env.BASE_URL}pic/${monthFolders[selectedMonth]}/${file}`;
           const title = file.replace(/\.[^/.]+$/, "");
           return <><div className="diary-photo-frame"><img key={filePath} src={filePath} alt={`${selectedMonth} memory: ${title}`} /></div><p className="diary-photo-name">{title}</p><p className="diary-page-number">MEMORY {selectedPhotoIndex + 1} / {files.length}</p></>;
         })() : <div className="diary-empty-photo"><span>♡</span><p>More memories will be added here.</p></div>}
@@ -1346,7 +1366,7 @@ const memoryStories = {
           nama pesitu iruka apo ne adikadi solu unku ithu first love athu nala apidy irukum 
           apidy solum pothu sila time enku hurt ana paravaila crt thana nu vitruven  
         </h3>
-        
+
         <p>Wish you many more happy returns of the day pa!</p>
         <button
           className="gift-button"
@@ -1375,7 +1395,7 @@ const memoryStories = {
 
         <video
           className="surprise-video-player"
-          src="/pic/surprise-vdo/surprise.mp4"
+          src={`${import.meta.env.BASE_URL}pic/surprise-vdo/surprise.mp4`}
           controls
           autoPlay
           playsInline
